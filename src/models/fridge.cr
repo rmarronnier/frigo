@@ -1,7 +1,9 @@
 class Fridge < BaseModel
   table do
     column name : String
-    has_many users : User
-    has_many notes : Note
+    has_many pairings : Pairing
+    has_many stickings : Sticking
+    has_many users : User, through: :pairings
+    has_many notes : Note, through: :stickings
   end
 end

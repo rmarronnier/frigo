@@ -6,8 +6,10 @@ class User < BaseModel
     column name : String?
     column email : String
     column encrypted_password : String
-    has_one fridge : Fridge?
-    has_many notes : Note?
+    has_many pairings : Pairing
+    has_many stickings : Sticking
+    has_many fridges : Fridge?, through: :pairings
+    has_many notes : Note?, through: :stickings
   end
 
   def emailable : Carbon::Address

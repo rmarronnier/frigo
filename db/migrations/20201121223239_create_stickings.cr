@@ -6,6 +6,7 @@ class CreateStickings::V20201121223239 < Avram::Migrator::Migration::V1
       add_timestamps
       add_belongs_to note : Note, on_delete: :cascade
       add_belongs_to fridge : Fridge, on_delete: :cascade
+      add_belongs_to user : User, on_delete: :cascade
     end
   end
 

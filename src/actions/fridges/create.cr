@@ -2,7 +2,7 @@ class Fridges::Create < BrowserAction
   post "/fridges" do
     SaveFridge.create(params) do |operation, fridge|
       if fridge
-        SaveFridge.update!(fridge)
+        # SaveFridge.update!(fridge)
         SavePairing.create!(fridge_id: fridge.id, user_id: current_user.id)
         # SaveUser.update!(user, params)
         flash.info = "Thanks for creating a fridge"

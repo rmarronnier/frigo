@@ -4,7 +4,18 @@ class Fridges::ShowPage < MainLayout
   def content
     h1 "This is your fridge"
     h3 "Name : #{fridge.name}"
-    h3 "Name : #{fridge.users!}"
+    h3 "Users :"
+    ul
+    fridge.users!.each do |user|
+      li user.email
+    end
+    h3 "Notes :"
+    ul
+    fridge.notes!.each do |note|
+      li note.content
+    end
+    link "Create a new note", to: Notes::New.with(id: fridge.id), flow_id: "create-note-button"
+
     # h3 "Email:  #{@current_user.email}"
     # helpful_tips
   end

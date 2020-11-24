@@ -13,6 +13,7 @@ class Fridges::ShowPage < MainLayout
     ul
     fridge.notes!.each do |note|
       li note.content
+      link "Delete", to: Notes::Delete.with(fridge_id: fridge.id, note_id: note.id), flow_id: "delete-note-button"
     end
     link "Create a new note", to: Notes::New.with(id: fridge.id), flow_id: "create-note-button"
 

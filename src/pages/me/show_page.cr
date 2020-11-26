@@ -1,8 +1,10 @@
 class Me::ShowPage < MainLayout
   def content
-    h1 "This is your profile"
-    h3 "Email:  #{@current_user.email}"
-    helpful_tips
+    section do
+      h1 "This is your profile"
+      h3 "Email:  #{@current_user.email}"
+      helpful_tips
+    end
   end
 
   private def helpful_tips

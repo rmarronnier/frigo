@@ -40,6 +40,8 @@ abstract class MainLayout
   private def render_signed_in_user
     text current_user.email
     text " - "
+    link "Invites(#{current_user.invites.size})", to: Invites::ShowAllForUser, flow_id: "invites-button" if current_user.invites.size > 0
+    text " - "
     link "Sign out", to: SignIns::Delete, flow_id: "sign-out-button"
   end
 end

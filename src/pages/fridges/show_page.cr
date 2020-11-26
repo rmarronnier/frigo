@@ -3,7 +3,7 @@ class Fridges::ShowPage < MainLayout
 
   def content
     h1 "This is your fridge"
-    h3 "Name : #{fridge.name}"
+    h2 "Name : #{fridge.name}"
     h3 "Users :"
     ul
     fridge.users!.each do |user|
@@ -15,7 +15,14 @@ class Fridges::ShowPage < MainLayout
       li note.content
       link "Delete", to: Notes::Delete.with(fridge_id: fridge.id, note_id: note.id), flow_id: "delete-note-button"
     end
+    h3 "Invites :"
+    ul
+    fridge.invites!.each do |invite|
+      li invite.email
+      # link "Delete", to: Notes::Delete.with(fridge_id: fridge.id, note_id: note.id), flow_id: "delete-note-button"
+    end
     link "Create a new note", to: Notes::New.with(id: fridge.id), flow_id: "create-note-button"
+    link "Invite someone to this fridge", to: Invites::New.with(id: fridge.id), flow_id: "create-invite-button"
 
     # h3 "Email:  #{@current_user.email}"
     # helpful_tips

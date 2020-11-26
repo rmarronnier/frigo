@@ -15,4 +15,8 @@ class User < BaseModel
   def emailable : Carbon::Address
     Carbon::Address.new(email)
   end
+
+  def invites
+    InviteQuery.new.email(email)
+  end
 end

@@ -8,8 +8,8 @@ class User < BaseModel
     column encrypted_password : String
     has_many pairings : Pairing
     has_many stickings : Sticking
-    has_many fridges : Fridge?, through: :pairings
-    has_many notes : Note?, through: :stickings
+    has_many fridges : Fridge, through: :pairings
+    has_many notes : Note, through: :stickings
   end
 
   def emailable : Carbon::Address

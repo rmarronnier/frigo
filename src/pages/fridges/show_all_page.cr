@@ -1,5 +1,5 @@
 class Fridges::ShowAllPage < MainLayout
-  needs fridges : FridgeQuery
+  needs fridges : Array(Fridge)
 
   def content
     h1 "These are your fridges"

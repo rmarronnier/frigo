@@ -7,8 +7,9 @@ class Shared::LayoutHead < BaseComponent
     head do
       utf8_charset
       title "My App - #{@page_title}"
-      # css_link asset("css/app.css"), data_turbolinks_track: "reload"
-      css_link "https://unpkg.com/mvp.css"
+      css_link asset("css/app.css"), data_turbolinks_track: "reload"
+      # css_link asset("css/tailwind.css"), data_turbolinks_track: "reload"
+      # css_link "https://unpkg.com/mvp.css"
       js_link asset("js/app.js"), defer: "true", data_turbolinks_track: "reload"
       meta name: "turbolinks-cache-control", content: "no-cache"
       csrf_meta_tags

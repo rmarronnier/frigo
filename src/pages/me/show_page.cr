@@ -3,7 +3,20 @@ class Me::ShowPage < MainLayout
     section do
       h1 "This is your profile"
       h3 "Email:  #{@current_user.email}"
-      helpful_tips
+      fridges_view
+      invites_view
+    end
+  end
+
+  private def fridges_view
+    @current_user.fridges!.each do |fridge|
+      mount Fridges::Summary, fridge: fridge
+    end
+  end
+
+  private def invites_view
+    @current_user.invites.each do |invite|
+      mount Invites::Summary, invite: invite
     end
   end
 

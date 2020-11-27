@@ -1,4 +1,6 @@
-Add name field in sign up + change name page
+Add change name page
+Add automagically generated svg avatar for user and fridge (with celestine)
 Add autodelete fridge if no users left
+Add hcaptcha to signup form
 Verify email on account creation
 PWA SPA Websockets

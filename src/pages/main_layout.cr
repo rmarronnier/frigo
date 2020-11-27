@@ -47,12 +47,12 @@ abstract class MainLayout
   end
 
   private def render_signed_in_user
-    text current_user.name.to_s
-    text " ("
-    text current_user.email
-    text ")"
-    text " - "
-    link "Fridges", to: Fridges::ShowAll, flow_id: "fridges-button"
+    link current_user.name.to_s, to: Me::Show, flow_id: "me-button"
+    # text " ("
+    # text current_user.email
+    # text ")"
+    # text " - "
+    # link "Fridges", to: Fridges::ShowAll, flow_id: "fridges-button"
     text " - "
     link "Invites(#{current_user.invites.size})", to: Invites::ShowAllForUser, flow_id: "invites-button" if current_user.invites.size > 0
     text " - "

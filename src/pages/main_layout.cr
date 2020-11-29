@@ -31,6 +31,7 @@ abstract class MainLayout
 
       body do
         render_header
+        hr
         content
         mount Shared::LayoutFooter
       end
@@ -40,22 +41,11 @@ abstract class MainLayout
   private def render_header
     header do
       mount Shared::FlashMessages, context.flash
-      nav do
-        render_signed_in_user
-      end
+      render_signed_in_user
     end
   end
 
   private def render_signed_in_user
-    link current_user.name.to_s, to: Me::Show, flow_id: "me-button"
-    # text " ("
-    # text current_user.email
-    # text ")"
-    # text " - "
-    # link "Fridges", to: Fridges::ShowAll, flow_id: "fridges-button"
-    text " - "
-    link "Invites(#{current_user.invites.size})", to: Invites::ShowAllForUser, flow_id: "invites-button" if current_user.invites.size > 0
-    text " - "
-    link "Sign out", to: SignIns::Delete, flow_id: "sign-out-button"
+    mount Shared::LayoutNav, user: current_user
   end
 end

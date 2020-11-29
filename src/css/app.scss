@@ -11,12 +11,13 @@
 // Note: importing with `~` tells webpack to look in the installed npm packages
 // https://stackoverflow.com/questions/39535760/what-does-a-tilde-in-a-css-url-do
 
-
-
 @import "~normalize-scss/sass/normalize/import-now";
-// Add your own components and import them like this:
-//
-// @import "components/my_new_component";
+
+@import "components/all", "pages/all", "variables/all";
+
+@import "~milligram";
+
+// https://purecss.io/start/ for emails
 
 // Default Lucky styles.
 // Delete these when you're ready to bring in your own CSS.

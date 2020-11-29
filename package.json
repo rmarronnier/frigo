@@ -4,11 +4,8 @@
   "dependencies": {
     "@babel/compat-data": "^7.9.0",
     "@rails/ujs": "^6.0.0",
-    "autoprefixer": "^10.0.3",
+    "milligram": "^1.4.1",
     "normalize-scss": "^7.0.1",
-    "postcss": "^8.1.10",
-    "postcss-import": "^13.0.0",
-    "tailwindcss": "^2.0.1",
     "turbolinks": "^5.2.0"
   },
   "scripts": {

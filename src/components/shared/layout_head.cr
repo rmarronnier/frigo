@@ -6,7 +6,7 @@ class Shared::LayoutHead < BaseComponent
   def render
     head do
       utf8_charset
-      title "My App - #{@page_title}"
+      title "Frigo - #{@page_title}"
       css_link asset("css/app.css"), data_turbolinks_track: "reload"
       # css_link asset("css/tailwind.css"), data_turbolinks_track: "reload"
       # css_link "https://unpkg.com/mvp.css"

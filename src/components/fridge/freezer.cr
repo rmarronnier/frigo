@@ -4,12 +4,12 @@ class Freezer < BaseComponent
 
   def render
     div class: "freezer" do
-      h1 fridge.name
+      h1 fridge.name, class: "fridge-name"
       ul class: "fridge_users" do
         fridge.users!.each do |user|
-          li class: "user" do
-            text "#{user.name} (#{user.email})" if user.id != current_user_id
-            text "You" if user.id == current_user_id
+          li class: "user sticker", id: "you" do
+            span "#{user.name} (#{user.email})" if user.id != current_user_id
+            span "You" if user.id == current_user_id
             link "Leave this fridge", to: Fridges::Leave.with(id: fridge.id), flow_id: "leave-fridge-button" if user.id == current_user_id
           end
         end

@@ -1,0 +1,223 @@
+body {
+  background-color: #dfeffe;
+  padding: 12% 0 0;
+  text-align: center;
+
+  //container to center fridge
+  .container {
+    position: relative;
+    height: 450px;
+    width: 260px;
+    margin: 0 auto;
+
+    .spark-container.left {
+      top: 15%;
+      left: -50%;
+    }
+
+    .spark-container.right {
+      top: 5%;
+      right: -50%;
+      transform: rotate(65deg);
+    }
+
+    //container for spark elements
+    .spark-container {
+      position: absolute;
+      z-index: 10;
+      width: 100px;
+      height: 100px;
+
+      .spark-inner-container * {
+        position: absolute;
+        z-index: 15;
+      }
+
+      //inner container for spark elements so I could use position relative
+      .spark-inner-container {
+        position: relative;
+        height: 100%;
+
+        .spark-circle, .spark-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+        }
+
+        //circle with outline
+        .spark-circle {
+          top: 10%;
+          left: 10%;
+          width: 10px;
+          height: 10px;
+          border: 3px solid darkslateblue;
+        }
+
+        //small dot
+        .spark-dot {
+          bottom: 35%;
+          right: 15%;
+          background-color: darkslateblue;
+        }
+
+        //small crosses
+        .spark-cross {
+          height: 15px;
+
+          &:before, &:after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 3px;
+            background-color: darkslateblue;
+          }
+
+          &:before {
+            transform: rotate(45deg);
+          }
+
+          &:after {
+            margin-top: -3px;
+            margin-left: 2px;
+            transform: rotate(-45deg);
+          }
+        }
+
+        .spark-cross.top {
+          top: 15%;
+          right: 20%;
+        }
+
+        .spark-cross.bottom {
+          bottom: 20%;
+          left: 20%;
+        }
+      }
+    }
+
+    //white outer glow-circle
+    .fridge-glow-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: (-350px) 0 0 -350px;
+      z-index: 1;
+      height: 700px;
+      width: 700px;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+    }
+
+    //all fridge children elements get position absolute
+    .fridge-outline * {
+      position: absolute;
+    }
+
+    //fridge element (parent)
+    .fridge-outline {
+      position: relative;
+      z-index: 10;
+      height: 450px;
+      width: 260px;
+      background-color: #f4f5fa;
+      border: 7px solid darkslateblue;
+      border-radius: 30px;
+
+      .fridge-door {
+        z-index: 10;
+        top: 35%;
+        left: 5%;
+        width: 90%;
+        height: 6px;
+        background-color: darkslateblue;
+        border-radius: 3px;
+      }
+
+      .fridge-shadow {
+        top: 0;
+        bottom: 0;
+        width: 18%;
+        background-color: #e5e6f7;
+        border-radius: 23px 0 0 23px;
+      }
+
+      .fridge-handle {
+        left: 6%;
+        width: 10px;
+        background-color: #b3b6e8;
+        border-radius: 5px;
+      }
+
+      .small {
+        top: 4%;
+        height: 27%;
+      }
+
+      .big {
+        top: 43%;
+        height: 52%;
+      }
+
+      .fridge-leg {
+        bottom: -14px;
+        width: 20px;
+        height: 10px;
+        background-color: darkslateblue;
+        border-radius: 5px;
+      }
+
+      .left {
+        left: 25%;
+      }
+
+      .right {
+        right: 25%;
+      }
+
+      .outer-line {
+        height: 6px;
+        background-color: darkslateblue;
+        border-radius: 3px;
+      }
+
+      .outer-left {
+        width: 100px;
+        transform: translateX(-100%);
+      }
+
+      .outer-left.first {
+        top: 70%;
+        width: 60px;
+      }
+
+      .outer-left.second {
+        top: 76%;
+        width: 130px;
+      }
+
+      .outer-left.third {
+        top: 85%;
+      }
+
+      .outer-right {
+        right: 0;
+        width: 90px;
+        transform: translateX(100%);
+      }
+
+      .outer-right.first {
+        top: 75%;
+        width: 120px;
+      }
+
+      .outer-right.second {
+        top: 80%;
+        width: 50px;
+      }
+
+      .outer-right.third {
+        top: 87%;
+      }
+    }
+  }
+}
